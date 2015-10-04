@@ -1,4 +1,4 @@
-package example.gwt.shared;
+package example.gwt_common.shared;
 
 /**
  * <p>

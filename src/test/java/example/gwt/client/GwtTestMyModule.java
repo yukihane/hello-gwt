@@ -1,10 +1,11 @@
 package example.gwt.client;
 
-import example.gwt.shared.FieldVerifier;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
+
+import example.gwt_common.shared.FieldVerifier;
 
 /**
  * GWT JUnit <b>integration</b> tests must extend GWTTestCase.

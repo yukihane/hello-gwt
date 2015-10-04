@@ -84,6 +84,7 @@
           <runTarget>MyModule.html</runTarget>
           <modules>
             <module>example.gwt.MyModule</module>
+            <module>example.gwt_common.Common</module>
           </modules>
         </configuration>
       </plugin>

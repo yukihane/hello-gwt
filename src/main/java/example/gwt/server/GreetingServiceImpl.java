@@ -1,7 +1,8 @@
 package example.gwt.server;
 
 import example.gwt.client.GreetingService;
-import example.gwt.shared.FieldVerifier;
+import example.gwt_common.shared.FieldVerifier;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**

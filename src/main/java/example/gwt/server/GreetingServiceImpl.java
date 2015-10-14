@@ -3,10 +3,12 @@ package example.gwt.server;
 import example.gwt.client.GreetingService;
 import example.gwt.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import javax.servlet.annotation.WebServlet;
 
 /**
  * The server side implementation of the RPC service.
  */
+@WebServlet("/MyModule/greet")
 @SuppressWarnings("serial")
 public class GreetingServiceImpl extends RemoteServiceServlet implements
     GreetingService {

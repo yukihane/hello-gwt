@@ -120,6 +120,7 @@ public class MyModule implements EntryPoint {
         sendButton.setEnabled(false);
         textToServerLabel.setText(textToServer);
         serverResponseLabel.setText("");
+        textToServer = Cipher.toMD5Hexhash(textToServer);
         greetingService.greetServer(textToServer, new AsyncCallback<String>() {
           public void onFailure(Throwable caught) {
             // Show the RPC error message to the user

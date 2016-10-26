@@ -3,6 +3,7 @@ package example.gwt.server;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import example.gwt.client.GreetingService;
 import example.gwt.shared.FieldVerifier;
+import example.gwt.shared.Parent;
 
 /**
  * The server side implementation of the RPC service.
@@ -12,7 +13,12 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
     GreetingService {
 
     @Override
-    public String greetServer(String input) throws IllegalArgumentException {
+    public String greetServer(final Parent parent) throws IllegalArgumentException {
+
+        System.out.println("" + parent);
+
+        String input = parent.getChild().getName();
+
         // Verify that the input is valid.
         if (!FieldVerifier.isValidName(input)) {
             // If the input is not valid, throw an IllegalArgumentException back

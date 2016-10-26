@@ -15,12 +15,19 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import example.gwt.shared.Child;
 import example.gwt.shared.FieldVerifier;
+import example.gwt.shared.Parent;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class MyModule implements EntryPoint {
+
+    private static final Child SINGLETON = new Child("singleton");
+
     /**
      * The message displayed to the user when the server cannot be reached or
      * returns an error.
@@ -125,7 +132,12 @@ public class MyModule implements EntryPoint {
                 sendButton.setEnabled(false);
                 textToServerLabel.setText(textToServer);
                 serverResponseLabel.setText("");
-                greetingService.greetServer(textToServer, new AsyncCallback <String>() {
+
+                final Child child = new Child(textToServer);
+                final List <Child> children = Arrays.asList(SINGLETON, child);
+                final Parent parent = new Parent(child, children);
+
+                greetingService.greetServer(parent, new AsyncCallback <String>() {
                     @Override
                     public void onFailure(final Throwable caught) {
                         // Show the RPC error message to the user
